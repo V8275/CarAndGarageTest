@@ -11,14 +11,15 @@ public class MobileInput : IInput
     {
         this.joystick = joystick;
 
-        // Создаем EventTrigger и добавляем обработчики
         EventTrigger trigger = jumpButton.gameObject.AddComponent<EventTrigger>();
 
+        // check click button
         EventTrigger.Entry entryDown = new EventTrigger.Entry();
         entryDown.eventID = EventTriggerType.PointerDown;
         entryDown.callback.AddListener((data) => { OnJumpButtonPressed(); });
         trigger.triggers.Add(entryDown);
 
+        // check up button
         EventTrigger.Entry entryUp = new EventTrigger.Entry();
         entryUp.eventID = EventTriggerType.PointerUp;
         entryUp.callback.AddListener((data) => { OnJumpButtonReleased(); });
@@ -29,15 +30,13 @@ public class MobileInput : IInput
     {
         Vector2 lookInput = Vector2.zero;
 
-        // Проверяем наличие касания
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-            // Если касание перемещается, получаем вектор поворота
             if (touch.phase == TouchPhase.Moved)
             {
-                lookInput = touch.deltaPosition; // Изменение позиции касания
+                lookInput = touch.deltaPosition;
             }
         }
 
@@ -54,6 +53,7 @@ public class MobileInput : IInput
         return jumpPressed;
     }
 
+    //to interact with objects
     public void HandleInteraction(Transform cameraTransform)
     {
         if (Input.touchCount > 0)

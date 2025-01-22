@@ -17,9 +17,10 @@ public class PCInput : IInput
         return new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
     }
 
+    // to interact with objects
     public void HandleInteraction(Transform cameraTransform)
     {
-        if (Input.GetMouseButtonDown(0)) // Левый клик мыши
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

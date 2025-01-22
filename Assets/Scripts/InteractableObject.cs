@@ -5,43 +5,39 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private Vector3 cameraOffset = Vector3.zero;
     private bool isHeld = false;
 
-    // Статическая переменная для отслеживания удерживаемого предмета
+    // value for check 
     private static InteractableObject currentHeldObject = null;
 
     public void ToggleHold(Transform newParent)
     {
         if (isHeld)
         {
-            // Если уже удерживается, просто отменяем удержание
+            // cancel hold
             ReleaseObject();
         }
         else
         {
-            // Если предмет уже удерживается, не даем возможность взять новый
+            // cancel hold new object if held now
             if (currentHeldObject != null)
             {
                 return;
             }
 
-            // Устанавливаем текущий удерживаемый предмет
             currentHeldObject = this;
 
             isHeld = true;
-            // Отключаем физику
             GetComponent<Rigidbody>().isKinematic = true;
-            transform.SetParent(newParent); // Устанавливаем родителя на камеру
-            transform.localPosition = cameraOffset; // Позиционируем перед камерой
+            transform.SetParent(newParent);
+            transform.localPosition = cameraOffset;
         }
     }
 
     private void ReleaseObject()
     {
-        // Освобождаем предмет
         isHeld = false;
-        GetComponent<Rigidbody>().isKinematic = false; // Включаем физику
-        transform.SetParent(null); // Убираем родительский объект
+        GetComponent<Rigidbody>().isKinematic = false;
+        transform.SetParent(null);
 
-        // Сбрасываем текущий удерживаемый предмет
         currentHeldObject = null;
     }
 }

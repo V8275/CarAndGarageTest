@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public Transform cameraTransform;
-    public float lookSpeed = 2f; // Скорость поворота
-    public float sensitivity = 1f; // Чувствительность
+    public float lookSpeed = 2f;
+    public float sensitivity = 1f;
 
     private Rigidbody rb;
     private bool isGrounded;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();
         LookAround();
-        inputService.HandleInteraction(cameraTransform); // Обработка взаимодействия
+        inputService.HandleInteraction(cameraTransform); // to interact with objects
     }
 
     void Move()

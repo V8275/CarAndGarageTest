@@ -4,8 +4,8 @@ using UnityEngine;
 public class GarageAnimation : MonoBehaviour
 {
     bool opened = false;
-    public float liftSpeed = 1.0f; // скорость подъема
-    public Vector3 liftOffset = new Vector3(0, 5, 0); // смещение для подъема
+    public float liftSpeed = 1.0f;
+    public Vector3 liftOffset = new Vector3(0, 5, 0);
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,9 +30,9 @@ public class GarageAnimation : MonoBehaviour
             float fractionOfJourney = distCovered / journeyLength;
             transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
 
-            await Task.Yield(); // ждем следующего кадра
+            await Task.Yield();
         }
 
-        transform.position = targetPosition; // гарантируем, что объект достигнет конечной позиции
+        transform.position = targetPosition;
     }
 }
