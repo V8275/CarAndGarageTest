@@ -1,0 +1,19 @@
+<libraries>
+  <library
+      name="D:\UnityProjects\CarTest\Library\Bee\Android\Prj\Mono2x\Gradle@@:unityLibrary::release"
+      jars="D:\UnityProjects\CarTest\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\.transforms\745c118e1d4dca27fc76c40eedbd1529\transformed\out\jars\classes.jar;D:\UnityProjects\CarTest\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\.transforms\745c118e1d4dca27fc76c40eedbd1529\transformed\out\jars\libs\unity-classes.jar"
+      resolved="Gradle:unityLibrary:unspecified"
+      folder="D:\UnityProjects\CarTest\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\.transforms\745c118e1d4dca27fc76c40eedbd1529\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="__local_aars__:D:\UnityProjects\CarTest\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\libs\unity-classes.jar:unspecified@jar"
+      jars="D:\UnityProjects\CarTest\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\libs\unity-classes.jar"
+      resolved="__local_aars__:D:\UnityProjects\CarTest\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\libs\unity-classes.jar:unspecified"/>
+</libraries>
