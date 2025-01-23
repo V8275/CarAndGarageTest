@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class PCInput : IInput
 {
+    public PCInput()
+    {
+        // hide and center cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     public Vector2 GetMovementInput()
     {
         return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
